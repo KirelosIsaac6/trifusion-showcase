@@ -1,19 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { Language, translations } from "@/translations";
 
-const Contact = () => {
+interface ContactProps {
+  language: Language;
+}
+
+const Contact = ({ language }: ContactProps) => {
   const sectionRef = useRef<HTMLElement>(null);
+  const { toast } = useToast();
+  const t = translations[language];
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,8 +61,8 @@ const Contact = () => {
 
       if (response.ok) {
         toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for contacting us. We'll get back to you soon.",
+          title: t.contact.form.success,
+          description: "",
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
@@ -64,8 +70,8 @@ const Contact = () => {
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
+        title: "Error sending message",
+        description: "Please try again later or contact us directly.",
         variant: "destructive",
       });
     } finally {
@@ -79,96 +85,79 @@ const Contact = () => {
       ref={sectionRef}
       className="py-20 px-4 sm:px-6 lg:px-8"
     >
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-navy dark:text-gold">
-          Contact Us
+      <div className="container mx-auto max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gradient">
+          {t.contact.title}
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Information */}
-          <Card className="p-8">
-            <h3 className="text-2xl font-semibold mb-6 text-navy dark:text-gold">
-              Get in Touch
-            </h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold mb-1">Address</h4>
-                <p className="text-muted-foreground">
-                  Am Flutgraben 53
-                  <br />
-                  41515 Grevenbroich
-                  <br />
-                  Germany
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-1">Company Register</h4>
-                <p className="text-muted-foreground">
-                  Commercial Register of Mönchengladbach
-                  <br />
-                  HRB 23694
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-1">Business Hours</h4>
-                <p className="text-muted-foreground">
-                  Monday - Friday: 9:00 AM - 6:00 PM
-                  <br />
-                  Saturday - Sunday: Closed
-                </p>
-              </div>
-            </div>
-          </Card>
+        <p className="text-center text-muted-foreground mb-12 text-base sm:text-lg">
+          {t.contact.subtitle}
+        </p>
 
-          {/* Contact Form */}
-          <Card className="p-8">
-            <h3 className="text-2xl font-semibold mb-6 text-navy dark:text-gold">
-              Send a Message
-            </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card className="p-6 sm:p-8 shadow-[var(--shadow-elegant)] hover-lift">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
                   type="text"
-                  placeholder="Your Name"
+                  placeholder={t.contact.form.name}
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
                   required
-                  className="w-full"
+                  className="border-border focus:border-gold transition-colors"
                 />
               </div>
               <div>
                 <Input
                   type="email"
-                  placeholder="Your Email"
+                  placeholder={t.contact.form.email}
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
                   required
-                  className="w-full"
+                  className="border-border focus:border-gold transition-colors"
                 />
               </div>
               <div>
                 <Textarea
-                  placeholder="Your Message"
+                  placeholder={t.contact.form.message}
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
                   }
                   required
                   rows={5}
-                  className="w-full resize-none"
+                  className="border-border focus:border-gold transition-colors resize-none"
                 />
               </div>
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gold hover:bg-gold-dark text-white transition-all duration-300"
+                className="w-full bg-gold hover:bg-gold-dark text-white hover-lift shadow-[var(--shadow-elegant)] font-semibold"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : t.contact.form.submit}
               </Button>
             </form>
+          </Card>
+
+          <Card className="p-6 sm:p-8 flex flex-col justify-center shadow-[var(--shadow-elegant)] hover-lift">
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  {t.footer.company}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t.contact.info.address}
+                </p>
+              </div>
+              <div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t.contact.info.register}
+                </p>
+              </div>
+            </div>
           </Card>
         </div>
       </div>

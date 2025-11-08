@@ -1,34 +1,22 @@
-const Footer = () => {
+import Logo from "./Logo";
+import { Language, translations } from "@/translations";
+
+interface FooterProps {
+  language: Language;
+}
+
+const Footer = ({ language }: FooterProps) => {
+  const t = translations[language];
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-navy dark:bg-card border-t border-border py-8 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gold text-sm">
-            © {new Date().getFullYear()} TriFusion Management GmbH. All rights reserved.
+    <footer className="bg-navy text-foreground py-8 border-t border-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-center space-y-4">
+          <Logo className="w-12 h-12" />
+          <p className="text-center text-sm text-muted-foreground">
+            © {currentYear} {t.footer.company}. {t.footer.rights}
           </p>
-          <div className="flex space-x-6">
-            <a
-              href="#about"
-              className="text-gold hover:text-gold-light transition-colors duration-300"
-            >
-              About
-            </a>
-            <a
-              href="#services"
-              className="text-gold hover:text-gold-light transition-colors duration-300"
-            >
-              Services
-            </a>
-            <a
-              href="#contact"
-              className="text-gold hover:text-gold-light transition-colors duration-300"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-        <div className="text-center mt-4 text-gold-dark text-xs">
-          HRB 23694 | Commercial Register of Mönchengladbach
         </div>
       </div>
     </footer>

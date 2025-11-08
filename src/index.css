@@ -8,79 +8,87 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 17% 18%;
+    --background: 0 0% 98%;
+    --foreground: 210 25% 20%;
     
-    --navy: 210 24% 16%;
-    --navy-light: 210 20% 25%;
-    --gold: 38 36% 55%;
-    --gold-light: 38 45% 65%;
-    --gold-dark: 38 30% 45%;
+    --navy: 210 28% 22%;
+    --navy-light: 210 22% 35%;
+    --gold: 38 60% 60%;
+    --gold-light: 38 65% 70%;
+    --gold-dark: 38 55% 50%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 17% 18%;
+    --card-foreground: 210 25% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 17% 18%;
+    --popover-foreground: 210 25% 20%;
 
-    --primary: 210 24% 16%;
-    --primary-foreground: 38 36% 55%;
+    --primary: 210 28% 22%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 36% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 38 60% 60%;
+    --secondary-foreground: 210 28% 22%;
 
-    --muted: 210 10% 95%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 210 12% 50%;
 
-    --accent: 38 36% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 60% 60%;
+    --accent-foreground: 210 28% 22%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 10% 90%;
-    --input: 210 10% 90%;
-    --ring: 38 36% 55%;
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 38 60% 60%;
 
     --radius: 0.5rem;
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--navy) / 0.15);
+    --shadow-hover: 0 15px 40px -10px hsl(var(--gold) / 0.25);
   }
 
   .dark {
-    --background: 210 24% 16%;
-    --foreground: 0 0% 95%;
+    --background: 210 28% 12%;
+    --foreground: 0 0% 96%;
     
-    --navy: 0 0% 95%;
-    --navy-light: 210 15% 85%;
-    --gold: 38 45% 65%;
-    --gold-light: 38 50% 75%;
-    --gold-dark: 38 36% 55%;
+    --navy: 210 28% 18%;
+    --navy-light: 210 22% 28%;
+    --gold: 38 70% 65%;
+    --gold-light: 38 75% 75%;
+    --gold-dark: 38 60% 55%;
 
-    --card: 210 20% 20%;
-    --card-foreground: 0 0% 95%;
+    --card: 210 25% 16%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 210 20% 20%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 210 25% 16%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 38 45% 65%;
-    --primary-foreground: 210 24% 16%;
+    --primary: 38 70% 65%;
+    --primary-foreground: 210 28% 12%;
 
-    --secondary: 210 20% 25%;
-    --secondary-foreground: 38 45% 65%;
+    --secondary: 210 25% 20%;
+    --secondary-foreground: 38 70% 65%;
 
-    --muted: 210 15% 25%;
-    --muted-foreground: 210 10% 60%;
+    --muted: 210 20% 18%;
+    --muted-foreground: 210 12% 65%;
 
-    --accent: 38 45% 65%;
-    --accent-foreground: 210 24% 16%;
+    --accent: 38 70% 65%;
+    --accent-foreground: 210 28% 12%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 0 0% 96%;
 
-    --border: 210 15% 30%;
-    --input: 210 15% 30%;
-    --ring: 38 45% 65%;
+    --border: 210 20% 25%;
+    --input: 210 20% 25%;
+    --ring: 38 70% 65%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--navy)) 100%);
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
+    --shadow-hover: 0 15px 40px -10px hsl(var(--gold) / 0.3);
   }
 }
 
@@ -100,17 +108,30 @@ All colors MUST be HSL.
 
 @layer utilities {
   .fade-in {
-    animation: fadeIn 0.8s ease-in forwards;
+    animation: fadeIn 1s ease-out forwards;
     opacity: 0;
   }
   
   @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
     to {
       opacity: 1;
+      transform: translateY(0);
     }
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-gold via-gold-light to-gold-dark bg-clip-text text-transparent;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-[var(--shadow-hover)];
   }
 }

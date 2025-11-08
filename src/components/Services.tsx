@@ -1,8 +1,14 @@
 import { useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
+import { Language, translations } from "@/translations";
 
-const Services = () => {
+interface ServicesProps {
+  language: Language;
+}
+
+const Services = ({ language }: ServicesProps) => {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = translations[language];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,39 +29,6 @@ const Services = () => {
     return () => observer.disconnect();
   }, []);
 
-  const services = [
-    {
-      title: "Hotel Operations Management",
-      description:
-        "Comprehensive management of daily hotel operations, ensuring smooth functionality and exceptional guest satisfaction.",
-    },
-    {
-      title: "Strategic Business Development",
-      description:
-        "Development and implementation of strategic business plans to maximize profitability and market presence.",
-    },
-    {
-      title: "Guest Experience Excellence",
-      description:
-        "Focus on creating memorable guest experiences through attention to detail and personalized service standards.",
-    },
-    {
-      title: "Quality Assurance",
-      description:
-        "Rigorous quality control measures to maintain the highest standards across all aspects of hotel operations.",
-    },
-    {
-      title: "Staff Training & Development",
-      description:
-        "Professional development programs ensuring staff excellence and maintaining superior service delivery.",
-    },
-    {
-      title: "Financial Management",
-      description:
-        "Expert financial oversight including budgeting, cost control, and revenue optimization strategies.",
-    },
-  ];
-
   return (
     <section
       id="services"
@@ -63,16 +36,20 @@ const Services = () => {
       className="py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-navy dark:text-gold">
-          Our Services
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+          <span className="text-foreground">{t.services.title} </span>
+          <span className="text-gradient">{t.services.highlight}</span>
         </h2>
+        <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto text-base sm:text-lg">
+          {t.services.subtitle}
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {t.services.items.map((service, index) => (
             <Card
               key={index}
-              className="p-6 hover:shadow-lg transition-all duration-300 hover:border-gold"
+              className="p-6 hover-lift hover:border-gold transition-all duration-300 bg-card shadow-[var(--shadow-elegant)]"
             >
-              <h3 className="text-xl font-semibold mb-3 text-navy dark:text-gold">
+              <h3 className="text-xl font-semibold mb-3 text-foreground">
                 {service.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
