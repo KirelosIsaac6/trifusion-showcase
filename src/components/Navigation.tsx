@@ -103,7 +103,7 @@ const Navigation = ({
               variant="ghost"
               size="sm"
               onClick={toggleTheme}
-              className="hover:bg-muted hover:text-gold transition-all duration-300 font-medium"
+              className="border border-border hover:bg-muted hover:text-gold hover:border-gold transition-all duration-300 font-medium"
             >
               {theme === "light" ? t.theme.dark : t.theme.light}
             </Button>

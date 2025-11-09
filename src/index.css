@@ -124,7 +124,7 @@ All colors MUST be HSL.
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-gold via-gold-light to-gold-dark bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-gold via-gold to-gold-light bg-clip-text text-transparent;
   }
   
   .hover-lift {
