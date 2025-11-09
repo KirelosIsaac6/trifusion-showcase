@@ -65,7 +65,8 @@ export const translations = {
       ],
     },
     management: {
-      title: "Management Team",
+      titlePart1: "Our Management",
+      titlePart2: "Team",
       subtitle:
         "Our leadership team brings extensive experience and expertise in hospitality management, ensuring strategic vision and operational excellence.",
       directors: [
@@ -87,7 +88,8 @@ export const translations = {
       ],
     },
     contact: {
-      title: "Get in Touch",
+      titlePart1: "Get in",
+      titlePart2: "Touch",
       subtitle:
         "Have questions or want to learn more about our services? We'd love to hear from you.",
       form: {
@@ -175,7 +177,8 @@ export const translations = {
       ],
     },
     management: {
-      title: "Management-Team",
+      titlePart1: "Unser Management",
+      titlePart2: "Team",
       subtitle:
         "Unser Führungsteam bringt umfangreiche Erfahrung und Expertise im Hotelmanagement mit und gewährleistet strategische Vision und operative Exzellenz.",
       directors: [
@@ -197,7 +200,8 @@ export const translations = {
       ],
     },
     contact: {
-      title: "Kontakt aufnehmen",
+      titlePart1: "Kontaktieren Sie",
+      titlePart2: "uns",
       subtitle:
         "Haben Sie Fragen oder möchten Sie mehr über unsere Dienstleistungen erfahren? Wir freuen uns auf Ihre Nachricht.",
       form: {
@@ -286,7 +290,8 @@ export const translations = {
       ],
     },
     management: {
-      title: "فريق الإدارة",
+      titlePart1: "فريق",
+      titlePart2: "الإدارة",
       subtitle:
         "يتمتع فريق القيادة لدينا بخبرة واسعة في إدارة الضيافة، مما يضمن الرؤية الاستراتيجية والتميز التشغيلي.",
       directors: [
@@ -308,7 +313,8 @@ export const translations = {
       ],
     },
     contact: {
-      title: "تواصل معنا",
+      titlePart1: "تواصل",
+      titlePart2: "معنا",
       subtitle:
         "هل لديك أسئلة أو ترغب في معرفة المزيد عن خدماتنا؟ نحن نحب أن نسمع منك.",
       form: {
