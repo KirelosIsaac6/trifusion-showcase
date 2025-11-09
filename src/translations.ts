@@ -65,8 +65,8 @@ export const translations = {
       ],
     },
     management: {
-      titlePart1: "Our Management",
-      titlePart2: "Team",
+      titlePart1: "Our",
+      titlePart2: "Management Team",
       subtitle:
         "Our leadership team brings extensive experience and expertise in hospitality management, ensuring strategic vision and operational excellence.",
       directors: [
@@ -177,8 +177,8 @@ export const translations = {
       ],
     },
     management: {
-      titlePart1: "Unser Management",
-      titlePart2: "Team",
+      titlePart1: "Unser",
+      titlePart2: "Management Team",
       subtitle:
         "Unser Führungsteam bringt umfangreiche Erfahrung und Expertise im Hotelmanagement mit und gewährleistet strategische Vision und operative Exzellenz.",
       directors: [
@@ -291,7 +291,7 @@ export const translations = {
     },
     management: {
       titlePart1: "فريق",
-      titlePart2: "الإدارة",
+      titlePart2: "الإدارة لدينا",
       subtitle:
         "يتمتع فريق القيادة لدينا بخبرة واسعة في إدارة الضيافة، مما يضمن الرؤية الاستراتيجية والتميز التشغيلي.",
       directors: [
