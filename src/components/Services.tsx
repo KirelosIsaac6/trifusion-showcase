@@ -36,7 +36,7 @@ const Services = ({ language }: ServicesProps) => {
       className="py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="container mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4">
           <span className="text-foreground">{t.services.title} </span>
           <span className="text-gradient">{t.services.highlight}</span>
         </h2>

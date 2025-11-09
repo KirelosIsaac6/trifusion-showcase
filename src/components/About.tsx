@@ -35,7 +35,7 @@ const About = ({ language }: AboutProps) => {
       className="py-20 px-4 sm:px-6 lg:px-8 bg-muted"
     >
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
           <span className="text-foreground">{t.about.title} </span>
           <span className="text-gradient">{t.about.highlight}</span>
         </h2>

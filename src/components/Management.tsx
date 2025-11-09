@@ -45,7 +45,7 @@ const Management = ({ language }: ManagementProps) => {
       className="py-20 px-4 sm:px-6 lg:px-8 bg-muted"
     >
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gradient">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4 text-gradient">
           {t.management.title}
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto text-base sm:text-lg">
