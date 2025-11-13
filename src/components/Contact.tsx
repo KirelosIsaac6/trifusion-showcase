@@ -87,7 +87,7 @@ const Contact = ({ language }: ContactProps) => {
     >
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl sm:text-5xl font-bold text-center mb-4">
-          <span className="text-navy">{t.contact.titlePart1} </span>
+          <span className="text-foreground">{t.contact.titlePart1} </span>
           <span className="text-gold">{t.contact.titlePart2}</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-base sm:text-lg">

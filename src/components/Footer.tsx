@@ -24,11 +24,8 @@ const Footer = ({ language }: FooterProps) => {
             </p>
           </div>
 
-          <div className="text-center space-y-1 text-sm">
+          <div className="text-center text-sm space-y-1">
             <p>Am Flutgraben 53, 41515 Grevenbroich, Germany</p>
-          </div>
-
-          <div className="text-center text-sm">
             <p>HRB 23694 | District Court of Mönchengladbach</p>
           </div>
 

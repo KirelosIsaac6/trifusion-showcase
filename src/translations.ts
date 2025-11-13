@@ -71,16 +71,6 @@ export const translations = {
         "Our leadership team brings extensive experience and expertise in hospitality management, ensuring strategic vision and operational excellence.",
       directors: [
         {
-          name: "Masiulla Harari",
-          title: "Managing Director",
-          location: "Grevenbroich",
-        },
-        {
-          name: "Sayed Tahir Taghadossi",
-          title: "Managing Director",
-          location: "Grevenbroich",
-        },
-        {
           name: "Mina Isaac Roshdi Youssef",
           title: "Managing Director",
           location: "Düsseldorf",
@@ -182,16 +172,6 @@ export const translations = {
       subtitle:
         "Unser Führungsteam bringt umfangreiche Erfahrung und Expertise im Hotelmanagement mit und gewährleistet strategische Vision und operative Exzellenz.",
       directors: [
-        {
-          name: "Masiulla Harari",
-          title: "Geschäftsführer",
-          location: "Grevenbroich",
-        },
-        {
-          name: "Sayed Tahir Taghadossi",
-          title: "Geschäftsführer",
-          location: "Grevenbroich",
-        },
         {
           name: "Mina Isaac Roshdi Youssef",
           title: "Geschäftsführer",
@@ -295,16 +275,6 @@ export const translations = {
       subtitle:
         "يتمتع فريق القيادة لدينا بخبرة واسعة في إدارة الضيافة، مما يضمن الرؤية الاستراتيجية والتميز التشغيلي.",
       directors: [
-        {
-          name: "مسيء الله حراري",
-          title: "مدير إداري",
-          location: "غريفنبرويش",
-        },
-        {
-          name: "سيد طاهر تغادوسي",
-          title: "مدير إداري",
-          location: "غريفنبرويش",
-        },
         {
           name: "مينا إسحاق رشدي يوسف",
           title: "مدير إداري",
