@@ -71,7 +71,7 @@ export const translations = {
         "Our leadership team brings extensive experience and expertise in hospitality management, ensuring strategic vision and operational excellence.",
       directors: [
         {
-          name: "Mina Isaac Roshdi Youssef",
+          name: "Isaac Youssef",
           title: "Managing Director",
           location: "Düsseldorf",
         },
@@ -173,7 +173,7 @@ export const translations = {
         "Unser Führungsteam bringt umfangreiche Erfahrung und Expertise im Hotelmanagement mit und gewährleistet strategische Vision und operative Exzellenz.",
       directors: [
         {
-          name: "Mina Isaac Roshdi Youssef",
+          name: "Isaac Youssef",
           title: "Geschäftsführer",
           location: "Düsseldorf",
         },
@@ -276,7 +276,7 @@ export const translations = {
         "يتمتع فريق القيادة لدينا بخبرة واسعة في إدارة الضيافة، مما يضمن الرؤية الاستراتيجية والتميز التشغيلي.",
       directors: [
         {
-          name: "مينا إسحاق رشدي يوسف",
+          name: "إسحاق يوسف",
           title: "مدير إداري",
           location: "دوسلدورف",
         },
